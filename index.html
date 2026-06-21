@@ -1,483 +1,568 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-MVVK525Z');</script>
-<!-- End Google Tag Manager -->
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohamed Hassan Aboulabed | Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    
-    <style>
-        :root {
-            --primary: #2563eb; /* BI Blue */
-            --primary-dark: #1d4ed8;
-            --text-main: #1f2937;
-            --text-muted: #4b5563;
-            --bg-light: #f9fafb;
-            --bg-white: #ffffff;
-            --border: #e5e7eb;
-            --shadow: rgba(0, 0, 0, 0.05);
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            color: var(--text-main);
-            background-color: var(--bg-light);
-            line-height: 1.6;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
-
-        /* Container Layout */
-        .container {
-            max-width: 1050px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        /* Header / Hero Section */
-        header {
-            background: var(--bg-white);
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px -1px var(--shadow);
-            border: 1px solid var(--border);
-            margin-bottom: 30px;
-            text-align: center;
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #0f172a;
-            margin-bottom: 8px;
-        }
-
-        header h2 {
-            font-size: 1.25rem;
-            font-weight: 500;
-            color: var(--primary);
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .contact-info {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            font-size: 0.95rem;
-            color: var(--text-muted);
-        }
-
-        .contact-info a:hover {
-            color: var(--primary);
-        }
-
-        .contact-info i {
-            color: var(--primary);
-            margin-right: 6px;
-        }
-
-        /* Main Grid Structure */
-        .main-layout {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 30px;
-        }
-
-        @media (max-width: 768px) {
-            .main-layout {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Card Sections */
-        .reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.6s ease-out;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mohamed Hassan Aboulabed — Data Analyst & ML Practitioner</title>
+<meta name="description" content="Mohamed Hassan Aboulabed — Data Analyst & Machine Learning Practitioner. SQL, Python, Power BI, predictive analytics & MLOps. Sharjah, UAE.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root{
+  --ink:#0E1220;
+  --paper:#F4F5F9;
+  --surface:#FFFFFF;
+  --surface-2:#FAFBFD;
+  --muted:#5C6477;
+  --faint:#8B92A3;
+  --line:#E5E8F0;
+  --primary:#4F46E5;
+  --primary-soft:#EEF0FF;
+  /* risk gradient — the signature motif (low → high churn risk) */
+  --risk-low:#16A394;
+  --risk-mid:#F0B429;
+  --risk-high:#E04F35;
+  --risk-grad:linear-gradient(90deg,var(--risk-low) 0%,#5FB97E 30%,var(--risk-mid) 62%,var(--risk-high) 100%);
+  --shadow:0 1px 2px rgba(16,22,40,.04),0 8px 24px -12px rgba(16,22,40,.10);
+  --shadow-lift:0 1px 2px rgba(16,22,40,.05),0 18px 40px -18px rgba(16,22,40,.22);
+  --radius:14px;
+  --maxw:1080px;
 }
-
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
+html.dark{
+  --ink:#EEF1F8;
+  --paper:#0B0F1A;
+  --surface:#121829;
+  --surface-2:#161D30;
+  --muted:#9AA3B8;
+  --faint:#717a90;
+  --line:#26304A;
+  --primary:#8B85FF;
+  --primary-soft:#1C2138;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 14px 34px -16px rgba(0,0,0,.6);
+  --shadow-lift:0 1px 2px rgba(0,0,0,.4),0 22px 48px -18px rgba(0,0,0,.7);
 }
-        section {
-            background: var(--bg-white);
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px -1px var(--shadow);
-            border: 1px solid var(--border);
-            margin-bottom: 30px;
-        }
-
-        section h3 {
-            font-size: 1.3rem;
-            color: #0f172a;
-            border-bottom: 2px solid var(--border);
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        section h3 i {
-            color: var(--primary);
-        }
-
-        /* Summary Statement */
-        .summary-text {
-            color: var(--text-muted);
-            font-size: 1.05rem;
-            margin-bottom: 12px;
-        }
-
-        /* Projects Layout */
-        .project-card {
-            padding: 20px;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            margin-bottom: 20px;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
-            border-color: #cbd5e1;
-        }
-
-        .project-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 12px;
-        }
-
-        .project-title {
-            font-size: 1.15rem;
-            font-weight: 600;
-            color: #0f172a;
-        }
-
-        .project-link {
-            font-size: 0.9rem;
-            background: #eff6ff;
-            color: var(--primary);
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-weight: 500;
-        }
-
-        .project-link:hover {
-            background: var(--primary);
-            color: white;
-        }
-
-        .project-list {
-            list-style-type: none;
-        }
-
-        .project-list li {
-            position: relative;
-            padding-left: 20px;
-            margin-bottom: 8px;
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        .project-list li::before {
-            content: "•";
-            color: var(--primary);
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-        }
-
-        /* Skills Layout */
-        .skills-group {
-            margin-bottom: 20px;
-        }
-
-        .skills-group h4 {
-            font-size: 0.95rem;
-            color: #0f172a;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .skills-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .tag {
-            background: #f3f4f6;
-            color: #374151;
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            border: 1px solid #e5e7eb;
-        }
-
-        /* Education & Learning */
-        .edu-item {
-            margin-bottom: 15px;
-        }
-
-        .edu-title {
-            font-weight: 600;
-            color: #0f172a;
-        }
-
-        .edu-meta {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid var(--border);
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-        /*  ========second script */
-        /* Dark Theme Variables */
-:root.dark-theme {
-    --bg-light: #0f172a;
-    --bg-white: #1e293b;
-    --text-main: #f8fafc;
-    --text-muted: #94a3b8;
-    --border: #334155;
-    --shadow: rgba(0, 0, 0, 0.3);
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  transition:background .4s ease,color .4s ease;
 }
+a{color:inherit;text-decoration:none;transition:color .2s ease}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
 
-/* Toggle Button Styling */
-.dark-mode-toggle {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: var(--primary);
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 45px;
-    height: 45px;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    transition: transform 0.2s, background 0.2s;
-    z-index: 1000;
+/* ---------- eyebrow / labels (mono utility face) ---------- */
+.eyebrow{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.72rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--faint);
+  font-weight:500;
 }
-.dark-mode-toggle:hover {
-    transform: scale(1.1);
-    background: var(--primary-dark);
+.mono{font-family:'JetBrains Mono',monospace}
+
+/* ---------- top bar ---------- */
+.topbar{
+  position:sticky;top:0;z-index:50;
+  backdrop-filter:saturate(160%) blur(12px);
+  background:color-mix(in srgb,var(--paper) 82%,transparent);
+  border-bottom:1px solid var(--line);
 }
-    </style>
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:1rem;letter-spacing:-.01em}
+.brand .dot{color:var(--primary)}
+.navlinks{display:flex;gap:26px;align-items:center}
+.navlinks a{font-size:.9rem;color:var(--muted);font-weight:500}
+.navlinks a:hover{color:var(--ink)}
+.theme-btn{
+  background:var(--surface);border:1px solid var(--line);color:var(--muted);
+  width:38px;height:38px;border-radius:10px;cursor:pointer;font-size:.95rem;
+  display:grid;place-items:center;transition:.2s;
+}
+.theme-btn:hover{color:var(--primary);border-color:var(--primary)}
+@media(max-width:640px){.navlinks a:not(.cta-mini){display:none}}
+
+/* ---------- hero ---------- */
+.hero{padding:72px 0 40px}
+.hero-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:48px;align-items:center}
+@media(max-width:880px){.hero-grid{grid-template-columns:1fr;gap:36px}}
+.hero h1{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:clamp(2.4rem,5.5vw,3.6rem);
+  line-height:1.04;font-weight:700;letter-spacing:-.025em;
+  margin:18px 0 14px;
+}
+.hero h1 em{font-style:normal;color:var(--primary)}
+.role{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.95rem;color:var(--muted);font-weight:500;
+  line-height:1.7;margin-bottom:26px;
+}
+.role b{color:var(--ink);font-weight:600}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px}
+.btn{
+  display:inline-flex;align-items:center;gap:9px;
+  padding:11px 20px;border-radius:11px;font-weight:600;font-size:.92rem;
+  transition:.2s;border:1px solid transparent;
+}
+.btn-primary{background:var(--primary);color:#fff}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 24px -8px var(--primary)}
+.btn-ghost{background:var(--surface);border-color:var(--line);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--primary);color:var(--primary)}
+.meta-row{display:flex;gap:18px;flex-wrap:wrap;margin-top:26px;font-size:.85rem;color:var(--muted)}
+.meta-row span{display:inline-flex;align-items:center;gap:7px}
+.meta-row i{color:var(--primary)}
+
+/* ---------- signature: model scorecard ---------- */
+.scorecard{
+  background:var(--surface);border:1px solid var(--line);
+  border-radius:18px;box-shadow:var(--shadow-lift);
+  padding:24px;position:relative;overflow:hidden;
+}
+.scorecard::before{
+  content:"";position:absolute;inset:0 0 auto 0;height:4px;background:var(--risk-grad);
+}
+.sc-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:4px}
+.sc-tag{
+  font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--primary);font-weight:600;
+  background:var(--primary-soft);padding:4px 9px;border-radius:6px;
+}
+.sc-q{font-family:'Space Grotesk',sans-serif;font-size:1.12rem;font-weight:600;
+  letter-spacing:-.01em;margin:14px 0 18px;line-height:1.35}
+.sc-q span{color:var(--muted);font-weight:400;font-size:.9rem;display:block;margin-top:4px}
+.sc-metrics{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.metric{background:var(--surface);padding:14px 16px}
+.metric .v{font-family:'Space Grotesk',sans-serif;font-size:1.55rem;font-weight:700;
+  letter-spacing:-.02em;line-height:1}
+.metric .l{font-family:'JetBrains Mono',monospace;font-size:.66rem;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--faint);margin-top:7px}
+/* risk tier bar */
+.tierbar{margin-top:18px}
+.tier-track{height:9px;border-radius:6px;background:var(--risk-grad);
+  opacity:.95;transform-origin:left;}
+.tier-labels{display:flex;justify-content:space-between;margin-top:8px;
+  font-family:'JetBrains Mono',monospace;font-size:.66rem;letter-spacing:.04em;color:var(--muted)}
+.tier-labels .hi{color:var(--risk-high);font-weight:600}
+.tier-labels .lo{color:var(--risk-low);font-weight:600}
+
+/* ---------- section frame ---------- */
+section.block{padding:54px 0;border-top:1px solid var(--line)}
+.sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:30px}
+.sec-num{font-family:'JetBrains Mono',monospace;font-size:.8rem;color:var(--primary);font-weight:600}
+.sec-head h2{font-family:'Space Grotesk',sans-serif;font-size:1.7rem;font-weight:600;letter-spacing:-.02em}
+.sec-head p{color:var(--muted);font-size:.92rem;margin-left:auto;max-width:42ch;text-align:right}
+@media(max-width:640px){.sec-head{flex-wrap:wrap}.sec-head p{text-align:left;margin-left:0}}
+
+/* ---------- flagship project ---------- */
+.flagship{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  box-shadow:var(--shadow);overflow:hidden;
+}
+.flag-top{padding:30px 32px 26px;border-bottom:1px solid var(--line)}
+.flag-top .eyebrow{margin-bottom:12px;color:var(--primary)}
+.flag-top h3{font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:700;
+  letter-spacing:-.02em;margin-bottom:12px}
+.flag-top p{color:var(--muted);font-size:.96rem;max-width:62ch}
+.flag-body{display:grid;grid-template-columns:1.4fr 1fr;gap:0}
+@media(max-width:820px){.flag-body{grid-template-columns:1fr}}
+.flag-left{padding:28px 32px}
+.flag-right{padding:28px 32px;background:var(--surface-2);border-left:1px solid var(--line)}
+@media(max-width:820px){.flag-right{border-left:none;border-top:1px solid var(--line)}}
+.flag-h4{font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--faint);margin-bottom:14px}
+.pipe{list-style:none;counter-reset:step}
+.pipe li{position:relative;padding:0 0 16px 34px;color:var(--muted);font-size:.92rem}
+.pipe li:last-child{padding-bottom:0}
+.pipe li::before{
+  counter-increment:step;content:counter(step,decimal-leading-zero);
+  position:absolute;left:0;top:0;font-family:'JetBrains Mono',monospace;
+  font-size:.7rem;font-weight:600;color:var(--primary);
+  background:var(--primary-soft);width:24px;height:24px;border-radius:7px;
+  display:grid;place-items:center;
+}
+.pipe li b{color:var(--ink);font-weight:600}
+.pipe li::after{content:"";position:absolute;left:11px;top:24px;bottom:6px;width:1px;background:var(--line)}
+.pipe li:last-child::after{display:none}
+.stack-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:6px}
+.stack-tags .t{font-family:'JetBrains Mono',monospace;font-size:.72rem;
+  background:var(--paper);border:1px solid var(--line);color:var(--muted);
+  padding:5px 10px;border-radius:7px}
+.flag-cta{display:flex;align-items:center;justify-content:space-between;
+  padding:20px 32px;border-top:1px solid var(--line);flex-wrap:wrap;gap:14px}
+.flag-cta .note{font-size:.85rem;color:var(--faint);font-family:'JetBrains Mono',monospace}
+
+/* ---------- selected work ---------- */
+.work-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:760px){.work-grid{grid-template-columns:1fr}}
+.card{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:26px;box-shadow:var(--shadow);transition:.25s;
+}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lift);border-color:color-mix(in srgb,var(--primary) 40%,var(--line))}
+.card .ch{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:14px}
+.card h3{font-family:'Space Grotesk',sans-serif;font-size:1.18rem;font-weight:600;letter-spacing:-.01em;line-height:1.3}
+.card .gh{font-size:.8rem;color:var(--muted);border:1px solid var(--line);border-radius:20px;
+  padding:5px 12px;white-space:nowrap;transition:.2s;display:inline-flex;gap:6px;align-items:center}
+.card .gh:hover{background:var(--primary);color:#fff;border-color:var(--primary)}
+.card ul{list-style:none}
+.card li{position:relative;padding-left:18px;margin-bottom:7px;color:var(--muted);font-size:.9rem}
+.card li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:2px;
+  background:var(--primary);opacity:.6}
+
+/* ---------- skills ---------- */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.skillcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px;box-shadow:var(--shadow)}
+.skillcard h4{font-family:'JetBrains Mono',monospace;font-size:.74rem;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--faint);margin-bottom:14px;display:flex;align-items:center;gap:9px}
+.skillcard h4 i{color:var(--primary);font-size:.95rem}
+.tags{display:flex;flex-wrap:wrap;gap:7px}
+.tags .tag{font-size:.84rem;background:var(--surface-2);border:1px solid var(--line);
+  color:var(--ink);padding:6px 11px;border-radius:8px;font-weight:500;transition:.2s}
+.tags .tag:hover{border-color:var(--primary);color:var(--primary)}
+
+/* ---------- two-up bottom ---------- */
+.twoup{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:700px){.twoup{grid-template-columns:1fr}}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}
+.edu-item{padding:12px 0;border-bottom:1px solid var(--line)}
+.edu-item:last-child{border-bottom:none;padding-bottom:0}
+.edu-item .t{font-weight:600;font-family:'Space Grotesk',sans-serif}
+.edu-item .m{font-size:.86rem;color:var(--muted);font-family:'JetBrains Mono',monospace;margin-top:2px}
+.learn{list-style:none}
+.learn li{position:relative;padding-left:22px;margin-bottom:10px;color:var(--muted);font-size:.92rem}
+.learn li::before{content:"\f0a9";font-family:"Font Awesome 6 Free";font-weight:900;
+  position:absolute;left:0;top:1px;color:var(--primary);font-size:.78rem}
+
+/* ---------- contact ---------- */
+.contact{text-align:center;padding:60px 0}
+.contact h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,4vw,2.6rem);
+  font-weight:700;letter-spacing:-.02em;margin-bottom:12px}
+.contact p{color:var(--muted);max-width:48ch;margin:0 auto 28px}
+.contact-links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+footer{border-top:1px solid var(--line);padding:26px 0;text-align:center;
+  color:var(--faint);font-size:.84rem;font-family:'JetBrains Mono',monospace}
+
+/* ---------- reveal animation ---------- */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+}
+:focus-visible{outline:2px solid var(--primary);outline-offset:3px;border-radius:4px}
+</style>
 </head>
 <body>
-    
 
+<div class="topbar">
+  <div class="wrap">
+    <a href="#top" class="brand">Mohamed Aboulabed<span class="dot">.</span></a>
+    <nav class="navlinks">
+      <a href="#flagship">Flagship</a>
+      <a href="#work">Work</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact" class="cta-mini">Contact</a>
+      <button class="theme-btn" id="themeBtn" aria-label="Toggle dark mode"><i class="fa-solid fa-moon"></i></button>
+    </nav>
+  </div>
+</div>
 
-    <div class="container">
-        
-        <header>
-            <h1>Mohamed Hassan Aboulabed</h1>
-            <h2>Data Analyst | Business Intelligence Specialist</h2>
-            
-            <div class="contact-info">
-                <span><i class="fa-solid fa-location-dot"></i> Sharjah, UAE</span>
-                <span><i class="fa-solid fa-envelope"></i> <a href="mailto:mahassan750@gmail.com">mahassan750@gmail.com</a></span>
-                <span><i class="fa-solid fa-phone"></i> <a href="tel:0545388193">0545388193</a></span>
-                <span><i class="fa-brands fa-linkedin"></i> <a href="https://linkedin.com" target="_blank">LinkedIn</a></span>
-                <span><i class="fa-brands fa-github"></i> <a href="https://github.com/mahssan750" target="_blank">GitHub</a></span>
-            </div>
-        </header>
-
-        <div class="main-layout">
-            
-            <div class="left-column">
-                
-                <section id="about">
-                    <h3><i class="fa-solid fa-user"></i> Summary</h3>
-                    <p class="summary-text">Business Intelligence Specialist with strong expertise in SQL, Power BI, and data modeling, experienced in building end-to-end data pipelines and transforming large-scale datasets into actionable business insights.</p>
-                    <p class="summary-text">Skilled in ETL processes, dashboard development, and data visualization to support data-driven decision-making.</p>
-                    <p class="summary-text">Combines analytical thinking with retail domain experience to deliver impactful business intelligence solutions.</p>
-                </section>
-
-                <section id="projects">
-                    <h3><i class="fa-solid fa-diagram-project"></i> Projects</h3>
-                    
-                    <div class="project-card">
-                        <div class="project-header">
-                            <div class="project-title">End-to-End Data Warehouse & Analytical Pipeline</div>
-                            <a href="https://github.com/mahssan750/Online_retail" target="_blank" class="project-link"><i class="fa-brands fa-github"></i> Code</a>
-                        </div>
-                        <ul class="project-list">
-                            <li>Designed and implemented a Medallion Architecture (Bronze-Silver-Gold) using SQL</li>
-                            <li>Built ETL pipelines to transform raw retail data into structured analytical models</li>
-                            <li>Improved data quality and consistency for downstream reporting</li>
-                            <li>Enabled efficient querying and analytics for business insights</li>
-                        </ul>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-header">
-                            <div class="project-title">Power BI Retail Analytics Dashboard</div>
-                            <a href="https://github.com/mahssan750/online_retail_dashboards" target="_blank" class="project-link"><i class="fa-brands fa-github"></i> Code</a>
-                        </div>
-                        <ul class="project-list">
-                            <li>Developed interactive Power BI dashboards from 500,000+ retail transactions</li>
-                            <li>Delivered insights on customer behavior, sales trends, and product performance</li>
-                            <li>Applied DAX and data modeling to create dynamic and scalable reports</li>
-                            <li>Enhanced decision-making through clear and actionable visualizations</li>
-                        </ul>
-                    </div>
-                </section>
-                
-            </div>
-
-            <div class="right-column">
-                
-                <section id="skills">
-                    <h3><i class="fa-solid fa-gears"></i> Technical Skills</h3>
-                  
-                    <div class="skills-group">
-                        <h4>BI & Visualization</h4>
-                        <div class="skills-tags">
-                            <span class="tag">Power BI</span>
-                            <span class="tag">Data Modeling</span>
-                            <span class="tag">DAX</span>
-                            <span class="tag">Dashboard Development</span>
-                            <span class="tag">Reporting</span>
-                        </div>
-                    </div>
-
-                    <div class="skills-group">
-                        <h4>Analysis & Coding</h4>
-                        <div class="skills-tags">
-                            <span class="tag">SQL (Advanced)</span>
-                            <span class="tag">Window Functions</span>
-                            <span class="tag">Python</span>
-                            <span class="tag">R (Statistical)</span>
-                        </div>
-                    </div>
-
-                    <div class="skills-group">
-                        <h4>Data Management</h4>
-                        <div class="skills-tags">
-                            <span class="tag">Relational Databases</span>
-                            <span class="tag">Medallion Architecture</span>
-                            <span class="tag">Star Schema</span>
-                            <span class="tag">ETL Processes</span>
-                            <span class="tag">Data Cleaning</span>
-                        </div>
-                    </div>
-
-                    <div class="skills-group">
-                        <h4>Tools & Tech</h4>
-                        <div class="skills-tags">
-                            <span class="tag">Excel (Advanced)</span>
-                            <span class="tag">Power Query</span>
-                            <span class="tag">Git & GitHub</span>
-                        </div>
-                    </div>
-                </section>
-
-                <section id="education">
-                    <h3><i class="fa-solid fa-graduation-cap"></i> Education</h3>
-                    <div class="edu-item">
-                        <div class="edu-title">Bachelor's Degree in Science</div>
-                        <div class="edu-meta">Al-Azhar University (2020)</div>
-                    </div>
-                </section>
-
-                <section id="learning">
-                    <h3><i class="fa-solid fa-book-open"></i> Continuous Learning</h3>
-                    <ul class="project-list">
-                        <li>Advanced SQL & Performance Optimization</li>
-                        <li>Power BI Advanced DAX & Data Modeling</li>
-                        <li>Python for Data Analysis (Pandas, NumPy)</li>
-                        <li>Web Fundamentals (HTML, CSS, JavaScript)</li>
-                    </ul>
-                </section>
-
-            </div>
-        </div>
-
-        <footer>
-            <p>&copy; 2026 Mohamed Hassan Aboulabed. Built with HTML, CSS & Js.</p>
-        </footer>
-
+<a id="top"></a>
+<header class="hero wrap">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow">Data Analyst · ML Practitioner · Sharjah, UAE</span>
+      <h1>I turn raw retail data into <em>decisions teams can act on.</em></h1>
+      <p class="role">
+        <b>Data Analyst & Machine Learning Practitioner</b><br>
+        Python · SQL · Power BI · Predictive Analytics · Data Science<br>
+        Business Analytics · Web Analytics · Automation · MLOps
+      </p>
+      <div class="hero-cta">
+        <a href="#flagship" class="btn btn-primary"><i class="fa-solid fa-chart-line"></i> See the flagship project</a>
+        <a href="https://github.com/mahssan750" target="_blank" rel="noopener" class="btn btn-ghost"><i class="fa-brands fa-github"></i> GitHub</a>
+      </div>
+      <div class="meta-row">
+        <span><i class="fa-solid fa-location-dot"></i> Sharjah, UAE</span>
+        <span><i class="fa-solid fa-envelope"></i> <a href="mailto:mahassan750@gmail.com">mahassan750@gmail.com</a></span>
+        <span><i class="fa-brands fa-linkedin"></i> <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a></span>
+      </div>
     </div>
-<!-- ===================================================== second script =============================================-->
-    <script>
-    // Create the toggle button dynamically
-    const toggleBtn = document.createElement('button');
-    toggleBtn.innerHTML = '<i class="fa-solid fa-moon"></i>';
-    toggleBtn.classList.add('dark-mode-toggle');
-    document.body.appendChild(toggleBtn);
 
-    // Check for saved preference
-    if (localStorage.getItem('theme') === 'dark') {
-        document.documentElement.classList.add('dark-theme');
-        toggleBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';
-    }
+    <!-- SIGNATURE: model scorecard -->
+    <aside class="scorecard reveal" aria-label="Churn model scorecard">
+      <div class="sc-head">
+        <span class="sc-tag">Flagship · live model</span>
+        <span class="mono" style="font-size:.72rem;color:var(--faint)">v1.0</span>
+      </div>
+      <p class="sc-q">Will this customer stop buying in the next 90 days?
+        <span>Every customer scored 0–100% and ranked by urgency.</span>
+      </p>
+      <div class="sc-metrics">
+        <div class="metric"><div class="v" data-count="0.785" data-dec="3">0.785</div><div class="l">Test AUC</div></div>
+        <div class="metric"><div class="v" data-count="80.97" data-dec="2" data-suffix="%">80.97%</div><div class="l">Recall</div></div>
+        <div class="metric"><div class="v" data-count="4338" data-dec="0">4,338</div><div class="l">Customers scored</div></div>
+        <div class="metric"><div class="v" data-count="3" data-dec="0">3</div><div class="l">Models compared</div></div>
+      </div>
+      <div class="tierbar">
+        <div class="tier-track" id="tierTrack"></div>
+        <div class="tier-labels">
+          <span class="lo">Low risk · leave alone</span>
+          <span class="hi">High risk · call first</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+</header>
 
-    // Toggle logic
-    toggleBtn.addEventListener('click', () => {
-        document.documentElement.classList.toggle('dark-theme');
-        const isDark = document.documentElement.classList.contains('dark-theme');
-        
-        toggleBtn.innerHTML = isDark ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
-        localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    });
+<!-- ===== FLAGSHIP ===== -->
+<section class="block" id="flagship">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">01</span>
+      <h2>Flagship project</h2>
+      <p>An end-to-end machine learning system, from raw transactions to a ranked call list.</p>
+    </div>
 
-    const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-        }
-    });
-}, { threshold: 0.1 });
+    <article class="flagship reveal">
+      <div class="flag-top">
+        <span class="eyebrow"><i class="fa-solid fa-bullseye"></i> Customer churn prediction</span>
+        <h3>Identify at-risk customers before they leave</h3>
+        <p>Every online retailer faces the same silent threat: customers who stop buying without warning. Retaining one costs 5–7× less than acquiring a new one — so the earlier you spot a churner, the cheaper the save. This system reads each customer's full transaction history and tells the retention team exactly who to call, who to email, and who to leave alone.</p>
+      </div>
 
-// Target your sections and project cards
-document.querySelectorAll('section, .project-card').forEach((el) => {
-    el.classList.add('reveal');
-    observer.observe(el);
+      <div class="flag-body">
+        <div class="flag-left">
+          <div class="flag-h4">How it works</div>
+          <ul class="pipe">
+            <li><b>Engineer behavioural features</b> from real e-commerce transactions — recency, frequency, monetary value and trend signals per customer.</li>
+            <li><b>Train & compare 3 models</b> — Logistic Regression, Random Forest and XGBoost, tuned with Optuna hyperparameter search.</li>
+            <li><b>Score every customer 0–100%</b> and assign a risk tier, so retention effort goes where it pays off.</li>
+            <li><b>Serve in production</b> — FastAPI endpoint, scheduled daily retraining, a file-scoring client and a pytest suite.</li>
+          </ul>
+        </div>
+        <div class="flag-right">
+          <div class="flag-h4">Results</div>
+          <div class="sc-metrics" style="margin-bottom:22px">
+            <div class="metric"><div class="v">0.785</div><div class="l">Test AUC</div></div>
+            <div class="metric"><div class="v">80.97%</div><div class="l">Recall</div></div>
+            <div class="metric"><div class="v">4,338</div><div class="l">Scored</div></div>
+            <div class="metric"><div class="v">3</div><div class="l">Models</div></div>
+          </div>
+          <div class="flag-h4">Stack</div>
+          <div class="stack-tags">
+            <span class="t">Python</span><span class="t">scikit-learn</span><span class="t">XGBoost</span>
+            <span class="t">Optuna</span><span class="t">FastAPI</span><span class="t">APScheduler</span>
+            <span class="t">pytest</span><span class="t">MLOps</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="flag-cta">
+        <span class="note">// recall 80.97% → catches 4 in 5 churners before they go</span>
+        <a href="https://github.com/mahssan750/Customer-Churn-Prediction" target="_blank" rel="noopener" class="btn btn-primary"><i class="fa-brands fa-github"></i> View on GitHub</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ===== SELECTED WORK ===== -->
+<section class="block" id="work">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">02</span>
+      <h2>Selected work</h2>
+      <p>Data engineering and BI foundations behind the analytics.</p>
+    </div>
+    <div class="work-grid">
+      <article class="card reveal">
+        <div class="ch">
+          <h3>End-to-End Data Warehouse & Analytical Pipeline</h3>
+          <a class="gh" href="https://github.com/mahssan750/Online_retail" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Code</a>
+        </div>
+        <ul>
+          <li>Designed a Medallion Architecture (Bronze → Silver → Gold) in SQL</li>
+          <li>Built ETL pipelines turning raw retail data into clean analytical models</li>
+          <li>Improved data quality and consistency for downstream reporting</li>
+          <li>Enabled efficient querying for business insights</li>
+        </ul>
+      </article>
+      <article class="card reveal">
+        <div class="ch">
+          <h3>Power BI Retail Analytics Dashboard</h3>
+          <a class="gh" href="https://github.com/mahssan750/online_retail_dashboards" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Code</a>
+        </div>
+        <ul>
+          <li>Interactive dashboards built on 500,000+ retail transactions</li>
+          <li>Insights on customer behaviour, sales trends and product performance</li>
+          <li>DAX and data modeling for dynamic, scalable reports</li>
+          <li>Clear visuals that sharpen decision-making</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SKILLS ===== -->
+<section class="block" id="skills">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">03</span>
+      <h2>Skills</h2>
+      <p>From SQL foundations through production machine learning.</p>
+    </div>
+    <div class="skills-grid">
+      <div class="skillcard reveal">
+        <h4><i class="fa-solid fa-brain"></i> Machine Learning & MLOps</h4>
+        <div class="tags">
+          <span class="tag">Predictive Analytics</span><span class="tag">Classification</span>
+          <span class="tag">XGBoost</span><span class="tag">Random Forest</span>
+          <span class="tag">scikit-learn</span><span class="tag">Optuna</span>
+          <span class="tag">FastAPI Serving</span><span class="tag">Model Monitoring</span>
+        </div>
+      </div>
+      <div class="skillcard reveal">
+        <h4><i class="fa-brands fa-python"></i> Python & Data Science</h4>
+        <div class="tags">
+          <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">NumPy</span>
+          <span class="tag">Feature Engineering</span><span class="tag">Statistical Analysis</span>
+          <span class="tag">CLV / BG-NBD</span>
+        </div>
+      </div>
+      <div class="skillcard reveal">
+        <h4><i class="fa-solid fa-database"></i> SQL & Data Engineering</h4>
+        <div class="tags">
+          <span class="tag">SQL (Advanced)</span><span class="tag">Window Functions</span>
+          <span class="tag">Medallion Architecture</span><span class="tag">Star Schema</span>
+          <span class="tag">ETL Pipelines</span><span class="tag">Data Cleaning</span>
+        </div>
+      </div>
+      <div class="skillcard reveal">
+        <h4><i class="fa-solid fa-chart-pie"></i> BI & Business Analytics</h4>
+        <div class="tags">
+          <span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Data Modeling</span>
+          <span class="tag">Cohort Analysis</span><span class="tag">RFM Segmentation</span>
+          <span class="tag">Dashboards</span>
+        </div>
+      </div>
+      <div class="skillcard reveal">
+        <h4><i class="fa-solid fa-robot"></i> Automation & Web Analytics</h4>
+        <div class="tags">
+          <span class="tag">Workflow Automation</span><span class="tag">n8n</span>
+          <span class="tag">Web Analytics</span><span class="tag">Scheduled Pipelines</span>
+          <span class="tag">API Integration</span>
+        </div>
+      </div>
+      <div class="skillcard reveal">
+        <h4><i class="fa-solid fa-screwdriver-wrench"></i> Tools</h4>
+        <div class="tags">
+          <span class="tag">Excel (Advanced)</span><span class="tag">Power Query</span>
+          <span class="tag">Git & GitHub</span><span class="tag">Microsoft Dynamics NAV / BC</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EDU + LEARNING ===== -->
+<section class="block">
+  <div class="wrap">
+    <div class="twoup">
+      <div class="panel reveal">
+        <div class="flag-h4"><i class="fa-solid fa-graduation-cap" style="color:var(--primary)"></i>&nbsp; Education</div>
+        <div class="edu-item">
+          <div class="t">Bachelor's Degree in Science</div>
+          <div class="m">Al-Azhar University · 2020</div>
+        </div>
+        <div class="edu-item">
+          <div class="t">4+ years · Supplements & pharmacy retail</div>
+          <div class="m">Gulf region · BI & analytics in a 350+ branch chain</div>
+        </div>
+      </div>
+      <div class="panel reveal">
+        <div class="flag-h4"><i class="fa-solid fa-book-open" style="color:var(--primary)"></i>&nbsp; Continuous learning</div>
+        <ul class="learn">
+          <li>Production ML & MLOps — serving, retraining, testing</li>
+          <li>Advanced SQL & query performance optimization</li>
+          <li>Power BI advanced DAX & data modeling</li>
+          <li>Python for Data Analysis (Pandas, NumPy)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="contact wrap" id="contact">
+  <div class="reveal">
+    <span class="eyebrow">Open to Senior Data Analyst roles</span>
+    <h2>Let's talk about your data.</h2>
+    <p>Have a churn, retention or BI problem worth solving? I'd be glad to dig in.</p>
+    <div class="contact-links">
+      <a href="mailto:mahassan750@gmail.com" class="btn btn-primary"><i class="fa-solid fa-envelope"></i> mahassan750@gmail.com</a>
+      <a href="tel:0545388193" class="btn btn-ghost"><i class="fa-solid fa-phone"></i> 054 538 8193</a>
+      <a href="https://github.com/mahssan750" target="_blank" rel="noopener" class="btn btn-ghost"><i class="fa-brands fa-github"></i> GitHub</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© 2026 Mohamed Hassan Aboulabed · Built with HTML, CSS & JavaScript</div>
+</footer>
+
+<script>
+// ---- theme toggle ----
+const root=document.documentElement, btn=document.getElementById('themeBtn');
+const setIcon=d=>btn.innerHTML=d?'<i class="fa-solid fa-sun"></i>':'<i class="fa-solid fa-moon"></i>';
+let saved='light';
+try{saved=localStorage.getItem('theme')||'light';}catch(e){}
+if(saved==='dark'){root.classList.add('dark');}
+setIcon(root.classList.contains('dark'));
+btn.addEventListener('click',()=>{
+  const d=root.classList.toggle('dark');
+  setIcon(d);
+  try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}
 });
-    </script>
+
+// ---- scroll reveal ----
+const io=new IntersectionObserver((es)=>{
+  es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// ---- count-up on the scorecard ----
+const fmt=(n,d)=>d>0?n.toFixed(d):Math.round(n).toLocaleString();
+const reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+const card=document.querySelector('.scorecard');
+const runCount=()=>{
+  document.querySelectorAll('.scorecard .v[data-count]').forEach(el=>{
+    const target=parseFloat(el.dataset.count), dec=+el.dataset.dec, suf=el.dataset.suffix||'';
+    if(reduce){el.textContent=fmt(target,dec)+suf;return;}
+    let s=null;const dur=900;
+    const tick=t=>{if(!s)s=t;const p=Math.min((t-s)/dur,1);
+      const e=1-Math.pow(1-p,3);
+      el.textContent=fmt(target*e,dec)+suf;
+      if(p<1)requestAnimationFrame(tick);};
+    requestAnimationFrame(tick);
+  });
+};
+// animate tier bar width-in
+const tier=document.getElementById('tierTrack');
+if(tier){tier.style.transform='scaleX(0)';if(!reduce)tier.style.transition='transform .9s cubic-bezier(.2,.7,.2,1)';}
+const co=new IntersectionObserver((es)=>{
+  es.forEach(e=>{if(e.isIntersecting){runCount();if(tier)tier.style.transform='scaleX(1)';co.disconnect();}});
+},{threshold:.4});
+if(card)co.observe(card);
+</script>
 </body>
 </html>
