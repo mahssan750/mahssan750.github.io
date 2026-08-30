@@ -10,8 +10,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mohamed Hassan Aboulabed — Data Analyst & ML Practitioner</title>
-<meta name="description" content="Mohamed Hassan Aboulabed — Data Analyst & Machine Learning Practitioner. SQL, Python, Power BI, predictive analytics & MLOps. Sharjah, UAE.">
+<title>Mohamed Hassan Aboulabed — Analytics Engineer &amp; Data Analyst</title>
+<meta name="description" content="Mohamed Hassan Aboulabed — Analytics Engineer & Data Analyst. SQL, dbt, dimensional modeling, Power BI and production machine learning. Sharjah, UAE.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -27,7 +27,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   --line:#E5E8F0;
   --primary:#4F46E5;
   --primary-soft:#EEF0FF;
-  /* risk gradient — the signature motif (low → high churn risk) */
+  /* layer gradient — raw → cleaned → business-ready */
   --risk-low:#16A394;
   --risk-mid:#F0B429;
   --risk-high:#E04F35;
@@ -117,6 +117,7 @@ a{color:inherit;text-decoration:none;transition:color .2s ease}
   display:inline-flex;align-items:center;gap:9px;
   padding:11px 20px;border-radius:11px;font-weight:600;font-size:.92rem;
   transition:.2s;border:1px solid transparent;
+  font-family:inherit;cursor:pointer;
 }
 .btn-primary{background:var(--primary);color:#fff}
 .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 24px -8px var(--primary)}
@@ -126,7 +127,7 @@ a{color:inherit;text-decoration:none;transition:color .2s ease}
 .meta-row span{display:inline-flex;align-items:center;gap:7px}
 .meta-row i{color:var(--primary)}
 
-/* ---------- signature: model scorecard ---------- */
+/* ---------- signature: layer card ---------- */
 .scorecard{
   background:var(--surface);border:1px solid var(--line);
   border-radius:18px;box-shadow:var(--shadow-lift);
@@ -151,7 +152,7 @@ a{color:inherit;text-decoration:none;transition:color .2s ease}
   letter-spacing:-.02em;line-height:1}
 .metric .l{font-family:'JetBrains Mono',monospace;font-size:.66rem;letter-spacing:.1em;
   text-transform:uppercase;color:var(--faint);margin-top:7px}
-/* risk tier bar */
+/* layer bar */
 .tierbar{margin-top:18px}
 .tier-track{height:9px;border-radius:6px;background:var(--risk-grad);
   opacity:.95;transform-origin:left;}
@@ -205,6 +206,7 @@ section.block{padding:54px 0;border-top:1px solid var(--line)}
 .flag-cta{display:flex;align-items:center;justify-content:space-between;
   padding:20px 32px;border-top:1px solid var(--line);flex-wrap:wrap;gap:14px}
 .flag-cta .note{font-size:.85rem;color:var(--faint);font-family:'JetBrains Mono',monospace}
+.flag-cta .btn-row{display:flex;gap:10px;flex-wrap:wrap}
 
 /* ---------- selected work ---------- */
 .work-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
@@ -256,6 +258,36 @@ section.block{padding:54px 0;border-top:1px solid var(--line)}
 .contact p{color:var(--muted);max-width:48ch;margin:0 auto 28px}
 .contact-links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 
+/* ---------- contact form ---------- */
+.formcard{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  box-shadow:var(--shadow);padding:28px;max-width:560px;margin:0 auto 30px;text-align:left;
+}
+.formcard .flag-h4{margin-bottom:18px}
+.fgrid{display:grid;gap:14px}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:520px){.frow{grid-template-columns:1fr}}
+.field label{
+  display:block;font-family:'JetBrains Mono',monospace;font-size:.68rem;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin-bottom:6px;
+}
+.field input,.field select,.field textarea{
+  width:100%;font-family:inherit;font-size:.92rem;color:var(--ink);
+  background:var(--surface-2);border:1px solid var(--line);border-radius:10px;
+  padding:11px 13px;transition:.2s;
+}
+.field textarea{resize:vertical;min-height:96px}
+.field input:focus,.field select:focus,.field textarea:focus{
+  outline:none;border-color:var(--primary);background:var(--surface);
+}
+.form-msg{
+  display:none;margin-top:14px;font-size:.88rem;padding:11px 14px;border-radius:10px;
+  border:1px solid var(--line);background:var(--surface-2);color:var(--muted);
+}
+.form-msg.show{display:block}
+.form-msg.ok{border-color:var(--risk-low);color:var(--risk-low)}
+.form-msg.err{border-color:var(--risk-high);color:var(--risk-high)}
+
 footer{border-top:1px solid var(--line);padding:26px 0;text-align:center;
   color:var(--faint);font-size:.84rem;font-family:'JetBrains Mono',monospace}
 
@@ -279,8 +311,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="wrap">
     <a href="#top" class="brand">Mohamed Aboulabed<span class="dot">.</span></a>
     <nav class="navlinks">
-      <a href="#flagship">Flagship</a>
-      <a href="#work">Work</a>
+      <a href="#platform">Data platform</a>
+      <a href="#ml">Machine learning</a>
       <a href="#skills">Skills</a>
       <a href="#contact" class="cta-mini">Contact</a>
       <button class="theme-btn" id="themeBtn" aria-label="Toggle dark mode"><i class="fa-solid fa-moon"></i></button>
@@ -292,72 +324,129 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <header class="hero wrap">
   <div class="hero-grid">
     <div>
-      <span class="eyebrow">Data Analyst · ML Practitioner · Sharjah, UAE</span>
-      <h1>I turn raw retail data into <em>decisions teams can act on.</em></h1>
+      <span class="eyebrow">Analytics Engineer · Data Analyst · Sharjah, UAE</span>
+      <h1>I build the clean data layer <em>that reporting and ML both run on.</em></h1>
       <p class="role">
-        <b>Data Analyst & Machine Learning Practitioner</b><br>
-        Python · SQL · Power BI · Predictive Analytics · Data Science<br>
-        Business Analytics · Web Analytics · Automation · MLOps
+        <b>Analytics Engineer &amp; Data Analyst</b><br>
+        SQL · dbt · Python · Power BI · Dimensional Modeling<br>
+        ETL Pipelines · Data Quality Testing · Predictive Analytics
       </p>
       <div class="hero-cta">
-        <a href="#flagship" class="btn btn-primary"><i class="fa-solid fa-chart-line"></i> See the flagship project</a>
+        <!-- TRACKED: cta_click -->
+        <a href="#platform" class="btn btn-primary" data-track="cta" data-cta-name="see_platform" data-cta-location="hero"><i class="fa-solid fa-layer-group"></i> See how I model data</a>
+        <!-- TRACKED: file_download -->
+        <a href="cv.pdf" download class="btn btn-ghost" data-track="download" data-file-name="mohamed-aboulabed-cv.pdf"><i class="fa-solid fa-file-arrow-down"></i> Download CV</a>
+        <!-- TRACKED: outbound_click -->
         <a href="https://github.com/mahssan750" target="_blank" rel="noopener" class="btn btn-ghost"><i class="fa-brands fa-github"></i> GitHub</a>
       </div>
       <div class="meta-row">
         <span><i class="fa-solid fa-location-dot"></i> Sharjah, UAE</span>
-        <span><i class="fa-solid fa-envelope"></i> <a href="mailto:mahassan750@gmail.com">mahassan750@gmail.com</a></span>
+        <span><i class="fa-solid fa-envelope"></i> <a href="mailto:mahassan750@gmail.com" data-track="email">mahassan750@gmail.com</a></span>
         <span><i class="fa-brands fa-linkedin"></i> <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a></span>
       </div>
     </div>
 
-    <!-- SIGNATURE: model scorecard -->
-    <aside class="scorecard reveal" aria-label="Churn model scorecard">
+    <!-- SIGNATURE: transformation layer card -->
+    <aside class="scorecard reveal" aria-label="Data transformation layers">
       <div class="sc-head">
-        <span class="sc-tag">Flagship · live model</span>
-        <span class="mono" style="font-size:.72rem;color:var(--faint)">v1.0</span>
+        <span class="sc-tag">Transformation layer</span>
+        <span class="mono" style="font-size:.72rem;color:var(--faint)">bronze → gold</span>
       </div>
-      <p class="sc-q">Will this customer stop buying in the next 90 days?
-        <span>Every customer scored 0–100% and ranked by urgency.</span>
+      <p class="sc-q">Can every team trust the same number?
+        <span>Raw data modelled once, tested at each layer, reused everywhere.</span>
       </p>
       <div class="sc-metrics">
-        <div class="metric"><div class="v" data-count="0.785" data-dec="3">0.785</div><div class="l">Test AUC</div></div>
-        <div class="metric"><div class="v" data-count="80.97" data-dec="2" data-suffix="%">80.97%</div><div class="l">Recall</div></div>
-        <div class="metric"><div class="v" data-count="4338" data-dec="0">4,338</div><div class="l">Customers scored</div></div>
-        <div class="metric"><div class="v" data-count="3" data-dec="0">3</div><div class="l">Models compared</div></div>
+        <div class="metric"><div class="v" data-count="500000" data-dec="0" data-suffix="+">500,000+</div><div class="l">Rows modelled</div></div>
+        <div class="metric"><div class="v" data-count="3" data-dec="0">3</div><div class="l">Medallion layers</div></div>
+        <div class="metric"><div class="v">dbt</div><div class="l">Transformation</div></div>
+        <div class="metric"><div class="v">Git</div><div class="l">Version controlled</div></div>
       </div>
       <div class="tierbar">
         <div class="tier-track" id="tierTrack"></div>
         <div class="tier-labels">
-          <span class="lo">Low risk · leave alone</span>
-          <span class="hi">High risk · call first</span>
+          <span class="lo">Bronze · raw</span>
+          <span class="hi">Gold · business-ready</span>
         </div>
       </div>
     </aside>
   </div>
 </header>
 
-<!-- ===== FLAGSHIP ===== -->
-<section class="block" id="flagship">
+<!-- ===== 01 DATA PLATFORM ===== -->
+<section class="block" id="platform">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="sec-num">01</span>
-      <h2>Flagship project</h2>
-      <p>An end-to-end machine learning system, from raw transactions to a ranked call list.</p>
+      <h2>Data platform</h2>
+      <p>Raw transactions turned into tested, business-ready tables.</p>
+    </div>
+
+    <article class="flagship reveal">
+      <div class="flag-top">
+        <span class="eyebrow"><i class="fa-solid fa-layer-group"></i> Analytics engineering</span>
+        <h3>One clean, tested data layer for the whole business</h3>
+        <p>Reports disagree when every team writes its own logic. I model the data once — raw, then cleaned, then business-ready — and test each layer before anyone sees it. The result: "revenue" means the same thing in a Power BI report, in an ad-hoc SQL query and in a machine learning feature table.</p>
+      </div>
+
+      <div class="flag-body">
+        <div class="flag-left">
+          <div class="flag-h4">How the pipeline is built</div>
+          <ul class="pipe">
+            <li><b>Land the raw data (Bronze)</b> — source data kept untouched, so every load is repeatable and nothing is lost.</li>
+            <li><b>Clean and standardise (Silver)</b> — fix data types, drop duplicates, resolve keys and apply business rules in version-controlled SQL.</li>
+            <li><b>Model for the business (Gold)</b> — star schemas built as dbt models, so facts and dimensions are ready to query and reuse.</li>
+            <li><b>Test before it ships</b> — dbt tests on nulls, uniqueness and referential integrity catch bad data before it reaches a dashboard.</li>
+          </ul>
+        </div>
+        <div class="flag-right">
+          <div class="flag-h4">What it delivers</div>
+          <div class="sc-metrics" style="margin-bottom:22px">
+            <div class="metric"><div class="v">3</div><div class="l">Modelled layers</div></div>
+            <div class="metric"><div class="v">500K+</div><div class="l">Rows</div></div>
+            <div class="metric"><div class="v">Star</div><div class="l">Schema design</div></div>
+            <div class="metric"><div class="v">Git</div><div class="l">Version control</div></div>
+          </div>
+          <div class="flag-h4">Stack</div>
+          <div class="stack-tags">
+            <span class="t">SQL</span><span class="t">T-SQL</span><span class="t">dbt</span>
+            <span class="t">SQL Server</span><span class="t">PostgreSQL</span>
+            <span class="t">Star Schema</span><span class="t">Medallion</span><span class="t">Git</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="flag-cta">
+        <span class="note">// one model, one definition, reused by every report</span>
+        <div class="btn-row">
+          <a href="https://github.com/mahssan750/Online_retail" target="_blank" rel="noopener" class="btn btn-primary"><i class="fa-brands fa-github"></i> View on GitHub</a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ===== 02 MACHINE LEARNING ===== -->
+<section class="block" id="ml">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">02</span>
+      <h2>Machine learning in production</h2>
+      <p>What the clean data layer makes possible: a model that ships and keeps running.</p>
     </div>
 
     <article class="flagship reveal">
       <div class="flag-top">
         <span class="eyebrow"><i class="fa-solid fa-bullseye"></i> Customer churn prediction</span>
         <h3>Identify at-risk customers before they leave</h3>
-        <p>Every online retailer faces the same silent threat: customers who stop buying without warning. Retaining one costs 5–7× less than acquiring a new one — so the earlier you spot a churner, the cheaper the save. This system reads each customer's full transaction history and tells the retention team exactly who to call, who to email, and who to leave alone.</p>
+        <p>Every retailer faces the same silent threat: customers who stop buying without warning. Retaining one costs 5–7× less than acquiring a new one, so the earlier you spot a churner, the cheaper the save. This system reads each customer's full transaction history and tells the retention team exactly who to call, who to email, and who to leave alone.</p>
       </div>
 
       <div class="flag-body">
         <div class="flag-left">
           <div class="flag-h4">How it works</div>
           <ul class="pipe">
-            <li><b>Engineer behavioural features</b> from real e-commerce transactions — recency, frequency, monetary value and trend signals per customer.</li>
-            <li><b>Train & compare 3 models</b> — Logistic Regression, Random Forest and XGBoost, tuned with Optuna hyperparameter search.</li>
+            <li><b>Engineer behavioural features</b> from the modelled transaction tables — recency, frequency, monetary value and trend signals per customer.</li>
+            <li><b>Train &amp; compare 3 models</b> — Logistic Regression, Random Forest and XGBoost, tuned with Optuna hyperparameter search.</li>
             <li><b>Score every customer 0–100%</b> and assign a risk tier, so retention effort goes where it pays off.</li>
             <li><b>Serve in production</b> — FastAPI endpoint, scheduled daily retraining, a file-scoring client and a pytest suite.</li>
           </ul>
@@ -381,60 +470,90 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <div class="flag-cta">
         <span class="note">// recall 80.97% → catches 4 in 5 churners before they go</span>
-        <a href="https://github.com/mahssan750/Customer-Churn-Prediction" target="_blank" rel="noopener" class="btn btn-primary"><i class="fa-brands fa-github"></i> View on GitHub</a>
+        <div class="btn-row">
+          <!-- TRACKED: file_download -->
+          <a href="churn-case-study.pdf" download class="btn btn-ghost" data-track="download" data-file-name="churn-case-study.pdf"><i class="fa-solid fa-file-pdf"></i> Case study (PDF)</a>
+          <!-- TRACKED: outbound_click -->
+          <a href="https://github.com/mahssan750/Customer-Churn-Prediction" target="_blank" rel="noopener" class="btn btn-primary"><i class="fa-brands fa-github"></i> View on GitHub</a>
+        </div>
       </div>
     </article>
   </div>
 </section>
 
-<!-- ===== SELECTED WORK ===== -->
+<!-- ===== 03 ALSO SHIPPED ===== -->
 <section class="block" id="work">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="sec-num">02</span>
-      <h2>Selected work</h2>
-      <p>Data engineering and BI foundations behind the analytics.</p>
+      <span class="sec-num">03</span>
+      <h2>Also shipped</h2>
+      <p>The reporting and measurement layer on top of the models.</p>
     </div>
     <div class="work-grid">
-      <article class="card reveal">
-        <div class="ch">
-          <h3>End-to-End Data Warehouse & Analytical Pipeline</h3>
-          <a class="gh" href="https://github.com/mahssan750/Online_retail" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Code</a>
-        </div>
-        <ul>
-          <li>Designed a Medallion Architecture (Bronze → Silver → Gold) in SQL</li>
-          <li>Built ETL pipelines turning raw retail data into clean analytical models</li>
-          <li>Improved data quality and consistency for downstream reporting</li>
-          <li>Enabled efficient querying for business insights</li>
-        </ul>
-      </article>
       <article class="card reveal">
         <div class="ch">
           <h3>Power BI Retail Analytics Dashboard</h3>
           <a class="gh" href="https://github.com/mahssan750/online_retail_dashboards" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Code</a>
         </div>
         <ul>
-          <li>Interactive dashboards built on 500,000+ retail transactions</li>
+          <li>Interactive dashboards built on the Gold-layer tables</li>
           <li>Insights on customer behaviour, sales trends and product performance</li>
-          <li>DAX and data modeling for dynamic, scalable reports</li>
-          <li>Clear visuals that sharpen decision-making</li>
+          <li>DAX measures and a star-schema model for fast, scalable reports</li>
+          <li>One shared definition of each metric, so reports agree</li>
+        </ul>
+      </article>
+      <article class="card reveal">
+        <div class="ch">
+          <h3>Web analytics tracking layer</h3>
+          <span class="gh"><i class="fa-solid fa-chart-simple"></i> Live here</span>
+        </div>
+        <ul>
+          <li>GA4 and Google Tag Manager implemented on this site</li>
+          <li>Custom dataLayer event schema — downloads, form submits, outbound clicks</li>
+          <li>Event parameters mapped to GA4 custom dimensions</li>
+          <li>Behavioural data treated like any other modelled source</li>
         </ul>
       </article>
     </div>
   </div>
 </section>
 
-<!-- ===== SKILLS ===== -->
+<!-- ===== 04 SKILLS ===== -->
 <section class="block" id="skills">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="sec-num">03</span>
+      <span class="sec-num">04</span>
       <h2>Skills</h2>
-      <p>From SQL foundations through production machine learning.</p>
+      <p>From SQL foundations and data modeling through production machine learning.</p>
     </div>
     <div class="skills-grid">
       <div class="skillcard reveal">
-        <h4><i class="fa-solid fa-brain"></i> Machine Learning & MLOps</h4>
+        <h4><i class="fa-solid fa-layer-group"></i> Analytics Engineering</h4>
+        <div class="tags">
+          <span class="tag">SQL (Advanced)</span><span class="tag">dbt</span>
+          <span class="tag">Dimensional Modeling</span><span class="tag">Star Schema</span>
+          <span class="tag">Medallion Architecture</span><span class="tag">ETL Pipelines</span>
+          <span class="tag">Data Quality Tests</span><span class="tag">Window Functions</span>
+        </div>
+      </div>
+      <div class="skillcard reveal">
+        <h4><i class="fa-solid fa-database"></i> Databases &amp; Warehousing</h4>
+        <div class="tags">
+          <span class="tag">SQL Server / T-SQL</span><span class="tag">PostgreSQL</span>
+          <span class="tag">Query Optimization</span><span class="tag">Power Query</span>
+          <span class="tag">Data Cleaning</span>
+        </div>
+      </div>
+      <div class="skillcard reveal">
+        <h4><i class="fa-brands fa-python"></i> Python &amp; Data Science</h4>
+        <div class="tags">
+          <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">NumPy</span>
+          <span class="tag">Feature Engineering</span><span class="tag">Statistical Analysis</span>
+          <span class="tag">CLV / BG-NBD</span>
+        </div>
+      </div>
+      <div class="skillcard reveal">
+        <h4><i class="fa-solid fa-brain"></i> Machine Learning &amp; MLOps</h4>
         <div class="tags">
           <span class="tag">Predictive Analytics</span><span class="tag">Classification</span>
           <span class="tag">XGBoost</span><span class="tag">Random Forest</span>
@@ -443,42 +562,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
       <div class="skillcard reveal">
-        <h4><i class="fa-brands fa-python"></i> Python & Data Science</h4>
+        <h4><i class="fa-solid fa-chart-pie"></i> BI &amp; Reporting</h4>
         <div class="tags">
-          <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">NumPy</span>
-          <span class="tag">Feature Engineering</span><span class="tag">Statistical Analysis</span>
-          <span class="tag">CLV / BG-NBD</span>
-        </div>
-      </div>
-      <div class="skillcard reveal">
-        <h4><i class="fa-solid fa-database"></i> SQL & Data Engineering</h4>
-        <div class="tags">
-          <span class="tag">SQL (Advanced)</span><span class="tag">Window Functions</span>
-          <span class="tag">Medallion Architecture</span><span class="tag">Star Schema</span>
-          <span class="tag">ETL Pipelines</span><span class="tag">Data Cleaning</span>
-        </div>
-      </div>
-      <div class="skillcard reveal">
-        <h4><i class="fa-solid fa-chart-pie"></i> BI & Business Analytics</h4>
-        <div class="tags">
-          <span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Data Modeling</span>
+          <span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Semantic Models</span>
           <span class="tag">Cohort Analysis</span><span class="tag">RFM Segmentation</span>
           <span class="tag">Dashboards</span>
         </div>
       </div>
       <div class="skillcard reveal">
-        <h4><i class="fa-solid fa-robot"></i> Automation & Web Analytics</h4>
+        <h4><i class="fa-solid fa-robot"></i> Automation &amp; Web Analytics</h4>
         <div class="tags">
-          <span class="tag">Workflow Automation</span><span class="tag">n8n</span>
-          <span class="tag">Web Analytics</span><span class="tag">Scheduled Pipelines</span>
-          <span class="tag">API Integration</span>
+          <span class="tag">GA4</span><span class="tag">Google Tag Manager</span>
+          <span class="tag">n8n</span><span class="tag">Docker</span>
+          <span class="tag">Scheduled Pipelines</span><span class="tag">API Integration</span>
         </div>
       </div>
       <div class="skillcard reveal">
         <h4><i class="fa-solid fa-screwdriver-wrench"></i> Tools</h4>
         <div class="tags">
-          <span class="tag">Excel (Advanced)</span><span class="tag">Power Query</span>
-          <span class="tag">Git & GitHub</span><span class="tag">Microsoft Dynamics NAV / BC</span>
+          <span class="tag">Git &amp; GitHub</span><span class="tag">Excel (Advanced)</span>
+          <span class="tag">Microsoft Dynamics NAV / BC</span>
         </div>
       </div>
     </div>
@@ -490,23 +593,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="wrap">
     <div class="twoup">
       <div class="panel reveal">
-        <div class="flag-h4"><i class="fa-solid fa-graduation-cap" style="color:var(--primary)"></i>&nbsp; Education</div>
+        <div class="flag-h4"><i class="fa-solid fa-graduation-cap" style="color:var(--primary)"></i>&nbsp; Background</div>
         <div class="edu-item">
           <div class="t">Bachelor's Degree in Science</div>
           <div class="m">Al-Azhar University · 2020</div>
         </div>
         <div class="edu-item">
-          <div class="t">4+ years · Supplements & pharmacy retail</div>
-          <div class="m">Gulf region · BI & analytics in a 350+ branch chain</div>
+          <div class="t">4+ years · Supplements &amp; pharmacy retail</div>
+          <div class="m">Gulf region · data &amp; analytics in a 350+ branch chain</div>
         </div>
       </div>
       <div class="panel reveal">
-        <div class="flag-h4"><i class="fa-solid fa-book-open" style="color:var(--primary)"></i>&nbsp; Continuous learning</div>
+        <div class="flag-h4"><i class="fa-solid fa-book-open" style="color:var(--primary)"></i>&nbsp; Currently learning</div>
         <ul class="learn">
-          <li>Production ML & MLOps — serving, retraining, testing</li>
-          <li>Advanced SQL & query performance optimization</li>
-          <li>Power BI advanced DAX & data modeling</li>
-          <li>Python for Data Analysis (Pandas, NumPy)</li>
+          <li>Cloud warehouses — Snowflake and BigQuery fundamentals</li>
+          <li>Pipeline orchestration and scheduling</li>
+          <li>Advanced SQL &amp; query performance optimization</li>
+          <li>Production ML — serving, retraining, testing</li>
         </ul>
       </div>
     </div>
@@ -516,23 +619,172 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ===== CONTACT ===== -->
 <section class="contact wrap" id="contact">
   <div class="reveal">
-    <span class="eyebrow">Open to Senior Data Analyst roles</span>
+    <span class="eyebrow">Open to Analytics Engineer roles</span>
     <h2>Let's talk about your data.</h2>
-    <p>Have a churn, retention or BI problem worth solving? I'd be glad to dig in.</p>
+    <p>Messy tables, arguing dashboards, or a churn problem worth solving? I'd be glad to dig in.</p>
+
+    <!-- TRACKED: contact_form_submit -->
+    <div class="formcard">
+      <div class="flag-h4"><i class="fa-solid fa-paper-plane" style="color:var(--primary)"></i>&nbsp; Send a message</div>
+      <div class="fgrid">
+        <div class="frow">
+          <div class="field">
+            <label for="f-name">Your name</label>
+            <input type="text" id="f-name" autocomplete="name" placeholder="Full name">
+          </div>
+          <div class="field">
+            <label for="f-email">Email</label>
+            <input type="email" id="f-email" autocomplete="email" placeholder="you@company.com">
+          </div>
+        </div>
+        <div class="field">
+          <label for="f-topic">What is it about?</label>
+          <select id="f-topic">
+            <option value="analytics_engineer_role">Analytics Engineer role</option>
+            <option value="data_analyst_role">Data Analyst role</option>
+            <option value="freelance_project">Freelance project</option>
+            <option value="data_modeling">Data modeling / dbt work</option>
+            <option value="churn_model">Churn / retention model</option>
+            <option value="power_bi">Power BI dashboard</option>
+            <option value="other">Something else</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-message">Message</label>
+          <textarea id="f-message" placeholder="Tell me a bit about the problem you want to solve."></textarea>
+        </div>
+        <button type="button" class="btn btn-primary" id="sendBtn" style="justify-content:center">
+          <i class="fa-solid fa-paper-plane"></i> Send message
+        </button>
+        <div class="form-msg" id="formMsg" role="status" aria-live="polite"></div>
+      </div>
+    </div>
+
     <div class="contact-links">
-      <a href="mailto:mahassan750@gmail.com" class="btn btn-primary"><i class="fa-solid fa-envelope"></i> mahassan750@gmail.com</a>
-      <a href="tel:0545388193" class="btn btn-ghost"><i class="fa-solid fa-phone"></i> 054 538 8193</a>
+      <a href="mailto:mahassan750@gmail.com" class="btn btn-primary" data-track="email"><i class="fa-solid fa-envelope"></i> mahassan750@gmail.com</a>
+      <a href="tel:0545388193" class="btn btn-ghost" data-track="phone"><i class="fa-solid fa-phone"></i> 054 538 8193</a>
       <a href="https://github.com/mahssan750" target="_blank" rel="noopener" class="btn btn-ghost"><i class="fa-brands fa-github"></i> GitHub</a>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="wrap">© 2026 Mohamed Hassan Aboulabed · Built with HTML, CSS & JavaScript</div>
+  <div class="wrap">© 2026 Mohamed Hassan Aboulabed · Built with HTML, CSS &amp; JavaScript</div>
 </footer>
 
 <script>
-// ---- theme toggle ----
+/* =========================================================
+   1. dataLayer helper — every event goes through here
+   ========================================================= */
+window.dataLayer = window.dataLayer || [];
+function track(eventName, params){
+  window.dataLayer.push(Object.assign({event: eventName}, params || {}));
+  // remove this line when you finish testing
+  console.log('dataLayer -->', eventName, params || {});
+}
+
+/* =========================================================
+   2. One click listener for the whole page
+   ========================================================= */
+document.addEventListener('click', function(e){
+  var el = e.target.closest('a');
+  if(!el) return;
+
+  var kind = el.dataset.track;
+
+  // --- file download ---
+  if(kind === 'download'){
+    track('file_download', {
+      file_name: el.dataset.fileName || '',
+      file_extension: (el.dataset.fileName || '').split('.').pop(),
+      link_text: el.textContent.trim()
+    });
+    return;
+  }
+
+  // --- CTA button ---
+  if(kind === 'cta'){
+    track('cta_click', {
+      cta_name: el.dataset.ctaName || '',
+      cta_location: el.dataset.ctaLocation || '',
+      link_text: el.textContent.trim()
+    });
+    return;
+  }
+
+  // --- email click ---
+  if(kind === 'email'){
+    track('email_click', { link_url: el.href });
+    return;
+  }
+
+  // --- phone click ---
+  if(kind === 'phone'){
+    track('phone_click', { link_url: el.href });
+    return;
+  }
+
+  // --- outbound link (any link leaving this domain) ---
+  if(el.hostname && el.hostname !== window.location.hostname && el.protocol.indexOf('http') === 0){
+    track('outbound_click', {
+      link_url: el.href,
+      link_domain: el.hostname,
+      link_text: el.textContent.trim()
+    });
+  }
+});
+
+/* =========================================================
+   3. Contact form
+   NOTE: this does NOT send an email by itself.
+   It fires the GTM event, then opens your mail app.
+   To send it silently, sign up at formspree.io and
+   POST the values to your Formspree URL instead.
+   ========================================================= */
+var sendBtn = document.getElementById('sendBtn');
+var formMsg = document.getElementById('formMsg');
+
+function showMsg(text, type){
+  formMsg.textContent = text;
+  formMsg.className = 'form-msg show ' + type;
+}
+
+if(sendBtn){
+  sendBtn.addEventListener('click', function(){
+    var name    = document.getElementById('f-name').value.trim();
+    var email   = document.getElementById('f-email').value.trim();
+    var topic   = document.getElementById('f-topic').value;
+    var message = document.getElementById('f-message').value.trim();
+
+    if(!name || !email || !message){
+      showMsg('Fill in your name, email and message first.', 'err');
+      track('form_error', { form_name: 'contact', error_reason: 'missing_fields' });
+      return;
+    }
+    if(email.indexOf('@') < 1 || email.indexOf('.') < 0){
+      showMsg('That email address does not look right.', 'err');
+      track('form_error', { form_name: 'contact', error_reason: 'invalid_email' });
+      return;
+    }
+
+    // main conversion event
+    track('contact_form_submit', {
+      form_name: 'contact',
+      form_topic: topic,
+      form_location: 'contact_section'
+    });
+
+    showMsg('Thanks - opening your mail app now.', 'ok');
+
+    var subject = encodeURIComponent('Portfolio contact - ' + topic);
+    var body    = encodeURIComponent(name + ' (' + email + ')\n\n' + message);
+    window.location.href = 'mailto:mahassan750@gmail.com?subject=' + subject + '&body=' + body;
+  });
+}
+
+/* =========================================================
+   4. Theme toggle (also tracked)
+   ========================================================= */
 const root=document.documentElement, btn=document.getElementById('themeBtn');
 const setIcon=d=>btn.innerHTML=d?'<i class="fa-solid fa-sun"></i>':'<i class="fa-solid fa-moon"></i>';
 let saved='light';
@@ -543,15 +795,37 @@ btn.addEventListener('click',()=>{
   const d=root.classList.toggle('dark');
   setIcon(d);
   try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}
+  track('theme_toggle', { theme_mode: d ? 'dark' : 'light' });
 });
 
-// ---- scroll reveal ----
+/* =========================================================
+   5. Scroll reveal
+   ========================================================= */
 const io=new IntersectionObserver((es)=>{
   es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
 },{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-// ---- count-up on the scorecard ----
+/* =========================================================
+   6. Section view tracking — fires once per section
+   ========================================================= */
+var seen = {};
+var sectionObserver = new IntersectionObserver(function(entries){
+  entries.forEach(function(entry){
+    if(entry.isIntersecting && !seen[entry.target.id]){
+      seen[entry.target.id] = true;
+      track('section_view', { section_name: entry.target.id });
+    }
+  });
+},{threshold:.35});
+['platform','ml','work','skills','contact'].forEach(function(id){
+  var el = document.getElementById(id);
+  if(el) sectionObserver.observe(el);
+});
+
+/* =========================================================
+   7. Count-up on the layer card
+   ========================================================= */
 const fmt=(n,d)=>d>0?n.toFixed(d):Math.round(n).toLocaleString();
 const reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
 const card=document.querySelector('.scorecard');
@@ -567,7 +841,6 @@ const runCount=()=>{
     requestAnimationFrame(tick);
   });
 };
-// animate tier bar width-in
 const tier=document.getElementById('tierTrack');
 if(tier){tier.style.transform='scaleX(0)';if(!reduce)tier.style.transition='transform .9s cubic-bezier(.2,.7,.2,1)';}
 const co=new IntersectionObserver((es)=>{
